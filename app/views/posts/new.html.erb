@@ -1,12 +1,19 @@
-<!--<h1> Nuevo Post</h1>
-
-<form method="Post">
-	first name <input name="first_name" type="text"/>
-</form>-->
+<!--clase 5 modificamos para la validacion de post-->
+<%= form_for :post , url: posts_path do |f| %>
+<%if @post.errors.any?%>
+<div id= "errorExplanation">
+<h2><%= pluralize(@post.errors.count,"error")%> prohibited
+	this post being saved:</h2>
+	<ul>
+	<% @post.errors.full_messages.each do |msg|%>
+		<li><%= msg%></li>
+	<% end%>
+	</ul>
+	</div>
+	<%end%>
 
 <h1> Nuevo Post</h1>
 <!--FORMULARIO EN RUBY-->
-<%= form_for :post,url:posts_path  do |f| %>
 	<p>
 	<%= f.label :title %><br>
 	<%= f.text_field :title %>
@@ -21,4 +28,4 @@
 <%end %>
 
 
-<%= link_to "Volver",posts_path %>
+<%= link_to "Back",posts_path %>

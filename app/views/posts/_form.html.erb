@@ -1,5 +1,4 @@
-<!--clase 5 modificamos para la validacion de post
-<%= form_for :post , url: posts_path do |f| %>
+<%= form_for @post do |f| %>
 <%if @post.errors.any?%>
 <div id= "errorExplanation">
 <h2><%= pluralize(@post.errors.count,"error")%> prohibited
@@ -12,8 +11,8 @@
 	</div>
 	<%end%>
 
-<h1> Nuevo Post</h1>
-
+<!--h1> Nuevo Post</h1>-->
+<!--FORMULARIO EN RUBY-->
 	<p>
 	<%= f.label :title %><br>
 	<%= f.text_field :title %>
@@ -28,8 +27,4 @@
 <%end %>
 
 
-<%= link_to "Back",posts_path %>
--->
-
-<h1> Nuevo/Editar </h1>
-<%= render 'form' %>
+<%= link_to 'Volver',posts_path %>

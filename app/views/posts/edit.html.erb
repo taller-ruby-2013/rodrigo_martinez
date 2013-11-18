@@ -1,5 +1,6 @@
-<!--clase 5 modificamos para la validacion de post
-<%= form_for :post , url: posts_path do |f| %>
+<!-- 
+<%= form_for :post , url: post_path(@post.id), 
+method: :patch do |f| %>
 <%if @post.errors.any?%>
 <div id= "errorExplanation">
 <h2><%= pluralize(@post.errors.count,"error")%> prohibited
@@ -30,6 +31,6 @@
 
 <%= link_to "Back",posts_path %>
 -->
-
 <h1> Nuevo/Editar </h1>
 <%= render 'form' %>
+

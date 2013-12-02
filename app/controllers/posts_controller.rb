@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	#filtro de autenticacion
+	before_filter:authenticate_user!
 	#creamos la accion new
 	def new
 		@post=Post.new()

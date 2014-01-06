@@ -1,21 +1,26 @@
+<html doctype>
+<head>
+<%= stylesheet_link_tag    "posts", media: "all", "data-turbolinks-track" => true %>
+</head>
 <h1>Mis posts</h1>
-<table>
-	<tr>
-		<th>Titulo</th>
-		<th>Texto</th>
-		<th></th>
-		<th></th>
-	</tr>
+<div class="body">
 	<% @posts.each do |post| %>
-	<tr>
-		<td><%= post.title%></td>
-		<td><%= post.text%></td>
-		<td><%= link_to 'Show', post_path(post.id)%></td>
-		<td><%= link_to 'Edit', edit_post_path(post.id)%></td>
-		<td><%= link_to 'Eliminar',post_path(post.id),
-			method: :delete , data: {confirm: '¿Estas seguro?'}%></td>
-	</tr>
+    <div class="post">
+    <div class="banner-post"><h3><%post.title%></h3>
+    
+    <div class="btn-group" id="botonera">
+    <%= link_to posts_path(post.id), :class => 'btn btn-default btn-sm' do %>
+    <span class="glyphicon glyphicon-edit"></span>
+    <% end %>
+   	<%= link_to post_path(post.id), method: :delete , data: {confirm: '¿Estas seguro?'}, :class => 'btn btn-default btn-sm' do%>
+   	<span class="glyphicon glyphicon-trash"></span>
+   	<%end%>
+    </div>
+    </div>
+    <p><%=post.text%></p>
+    <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary' %>
+    </div>
 	<% end%>
-</table>
+	</div>
 
 <%= link_to "Nuevo Post", new_post_path %>

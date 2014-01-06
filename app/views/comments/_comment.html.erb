@@ -1,15 +1,13 @@
-<p>
-<strong>Autor:</strong>
+<div class="panel panel-default">
+<div class="panel-heading">
 <%=comment.commenter%>
-</p>
+</div>
 
-<p>
-<strong>Comentario:</strong>
+<div class="panel-body">
 <%=comment.body%>
-</p>
 
-<p>
 <%= link_to 'Eliminar Comentario', [comment.post, comment],
              :confirm => 'Esta seguro?',
-             :method => :delete %>
-</p>
+             :method => :delete,:class => "btn btn-success pull-right" %>
+</div>
+</div>

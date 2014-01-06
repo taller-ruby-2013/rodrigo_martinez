@@ -37,6 +37,10 @@ gem 'devise'
 gem 'bootstrap-sass-rails'
 
 gem 'rails_12factor',group: :production
+
+gem 'will_paginate', '~> 3.0.4'
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

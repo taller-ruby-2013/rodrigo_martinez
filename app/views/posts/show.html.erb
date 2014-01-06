@@ -1,10 +1,18 @@
-<div class="post-complete">
-    <div class="banner-post"><h3><%=post.title%></h3></div>
-    <p><%=post.text%></p>
+<div class="row">
+<div class="col-md 8">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><%=@post.title%></div>
+    <div class="panel-body">
+    <p><%=@post.text%></p>
+    </div>
     </div>
 
-<h2>Comentarios</h2>
+<div class="panel panel-primary">
+<div class="panel-heading">Comentarios</div>
+<div clas="panel-body">
 <%= render @post.comments %>
+</div>
+</div>
 
 <h2>Agregar Comentario:</h2>
 <%= render "comments/form" %>
@@ -12,3 +20,5 @@
 
 <%= link_to "Volver",posts_path %>
 <%= link_to 'Edit', edit_post_path(@post)%>
+</div>
+</div>

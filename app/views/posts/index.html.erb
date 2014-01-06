@@ -6,16 +6,26 @@
 </head>
 <body>
 
-<div class="body">
+<div class="contenedor">
+    <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item"><%= image_tag("banner1.jpg")%></div>
+        <div class="item"><%= image_tag("banner2.jpg")%></div>
+        <div class="item"><%= image_tag("banner3.jpg")%></div>
+        <div class="active item"><%= image_tag("banner4.jpg")%></div>
+        <div class="item"><%= image_tag("banner5.jpg")%></div>
+      </div>
+    </div>
+    </div>
 <div class="row">
 <div class="col-md-8">
 <h1><span class="title">Mis posts</span>
 <%= link_to "Nuevo Post", new_post_path, :class =>'btn btn-info btn-lg' %></h1>
 	<% @posts.each do |post| %>
-    <div class="post">
-    <div class="banner-post"><h3><%=post.title%></h3>
+    <div class="panel panel-primary">
+    <div class="panel-heading"><%=post.title%>
     
-    <div class="btn-group " id="botonera">
+    <div class="btn-group-xs pull-right">
     <%= link_to edit_post_path(post.id), :class => 'btn btn-default btn-sm' do %>
     <span class="glyphicon glyphicon-edit"></span>
     <% end %>
@@ -24,25 +34,39 @@
    	<%end%>
     </div>
     </div>
-    <p><%=post.text%></p>
+    <div class="panel-body">
+    <p><%=post.text.at(0..500)+"..."%></p>
     <%= link_to "Read more", post_path(post), :class => 'btn btn-primary',:id =>'read-button' %>
 
     </div>
+    </div>
 	<% end%>
+	<%= will_paginate @posts, renderer: BootstrapPagination::Rails  %>
 	</div>
 	<div class="col-md-4">
 	<!--agregar el buscador-->
-	<form class="form-inline" role="form">
-  <div class="form-group">
-    <input type="text" class="form-control" id="buscador" placeholder="Buscar...">
-  	<button type="submit" class="btn btn-success">Search</button>
+	<div class="input-group form-group">
+      <input type="text" class="form-control" placeholder="buscar...">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button">Search</button>
+      </span>
+    </div>
+    <div class="list-group">
+  	<a href="http://www.google.cl" class="list-group-item">
+    <h4 class="list-group-item-heading">Google</h4>
+    <p class="list-group-item-text">cosas fascinantes</p>
+  	</a>
+  	<a href="http://www.facebook.com" class="list-group-item">
+    <h4 class="list-group-item-heading">Wikipedia</h4>
+    <p class="list-group-item-text">cosas de interes mundial</p>
+  	</a>
+	</div>
   	<div>
 </form>
 	</div>
 	</div>
 
-    </div>
 
-
+</div>
 </body>
 </html>

@@ -6,16 +6,16 @@
 <div class="body">
 	<% @posts.each do |post| %>
     <div class="post">
-    <div class="banner-post"><h3><%post.title%></h3>
-    
-    <div class="btn-group" id="botonera">
+    <div class="banner-post"><h3><%=post.title%> 
+    <div class="btn-group-xs pull-right ">
     <%= link_to posts_path(post.id), :class => 'btn btn-default btn-sm' do %>
     <span class="glyphicon glyphicon-edit"></span>
     <% end %>
    	<%= link_to post_path(post.id), method: :delete , data: {confirm: '¿Estas seguro?'}, :class => 'btn btn-default btn-sm' do%>
    	<span class="glyphicon glyphicon-trash"></span>
    	<%end%>
-    </div>
+    </div></h3>
+   
     </div>
     <p><%=post.text%></p>
     <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary' %>

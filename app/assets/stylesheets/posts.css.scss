@@ -45,13 +45,16 @@ box-shadow:         4px 2px 18px 0px rgba(50, 50, 50, 0.75);
 
 .banner-post{
 	display:block;
-	background-color:#c6c6c6;
+	//background-color:#c6c6c6;
 	height:50px;
 	position:relative;
 	top:0px;
 	left:0px;
 	-webkit-border-radius:15px 15px 0px 0px;
 	border-radius: 15px 15px 0px 0px;	
+	background-color: #1d76ad; // Old browsers
+@include filter-gradient(#1d76ad, #032a41, vertical); // IE6-9
+@include background-image(linear-gradient(top, #1d76ad 0%,#032a41 100%));
 }
 
 .aside{

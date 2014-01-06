@@ -18,7 +18,7 @@
     </div>
     </div>
     <p><%=post.text%></p>
-    <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary pull-right' %>
+    <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary',:id =>'read-button' %>
     </div>
 	<% end%>
 	</div>

@@ -24,9 +24,20 @@
     </div>
     <p><%=post.text%></p>
     <%= link_to "Read more", post_path(post), :class => 'btn btn-primary',:id =>'read-button' %>
+
     </div>
 	<% end%>
-	<div class="aside"></div>
+
+	<div class="aside">
+
+	<!--agregar el buscador-->
+	<form class="form-inline" role="form">
+  <div class="form-group">
+    <input type="text" class="form-control" id="buscador" placeholder="Buscar...">
+  	<button type="submit" class="btn btn-success">Search</button>
+  	<div>
+</form>
+	</div>
     </div>
 
 

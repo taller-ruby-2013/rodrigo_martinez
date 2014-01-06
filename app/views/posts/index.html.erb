@@ -1,7 +1,9 @@
-<html doctype>
+<!DOCTYPE html>
+<html>
 <head>
 <%= stylesheet_link_tag    "posts", media: "all", "data-turbolinks-track" => true %>
 </head>
+<body>
 <h1>Mis posts</h1>
 <div class="body">
 	<% @posts.each do |post| %>
@@ -21,6 +23,9 @@
     <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary',:id =>'read-button' %>
     </div>
 	<% end%>
-	</div>
+	<div class="aside"></div>
+    </div>
 
 <%= link_to "Nuevo Post", new_post_path %>
+</body>
+</html>

@@ -12,13 +12,13 @@
     <%= link_to posts_path(post.id), :class => 'btn btn-default btn-sm' do %>
     <span class="glyphicon glyphicon-edit"></span>
     <% end %>
-   	<%= link_to post_path(post.id), method: :delete , data: {confirm: '¿Estas seguro?'}, :class => 'btn btn-default btn-sm' do%>
+   	<%= link_to edit_post_path(post.id), method: :delete , data: {confirm: '¿Estas seguro?'}, :class => 'btn btn-default btn-sm' do%>
    	<span class="glyphicon glyphicon-trash"></span>
    	<%end%>
     </div>
     </div>
     <p><%=post.text%></p>
-    <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary' %>
+    <%= link_to "Read more", posts_path(post.id), :class => 'btn btn-primary pull-right' %>
     </div>
 	<% end%>
 	</div>

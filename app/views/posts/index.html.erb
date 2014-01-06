@@ -2,10 +2,13 @@
 <html>
 <head>
 <%= stylesheet_link_tag    "posts", media: "all", "data-turbolinks-track" => true %>
+<link href='http://fonts.googleapis.com/css?family=Henny+Penny' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<h1>Mis posts</h1>
+
 <div class="body">
+<h1><span class="title">Mis posts</span>
+<%= link_to "Nuevo Post", new_post_path, :class =>'btn btn-info btn-lg' %></h1>
 	<% @posts.each do |post| %>
     <div class="post">
     <div class="banner-post"><h3><%=post.title%></h3>
@@ -26,6 +29,6 @@
 	<div class="aside"></div>
     </div>
 
-<%= link_to "Nuevo Post", new_post_path %>
+
 </body>
 </html>
